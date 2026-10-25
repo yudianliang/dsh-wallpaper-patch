@@ -1,0 +1,31 @@
+# 构建产物
+*.exe
+*.dll
+*.pdb
+*.ico
+
+# 编译中间件
+app/cfg*.json
+app/*.log
+*.log
+
+# 依赖与解包参考（体积大、且属于 DSH 自己的代码）
+node_modules/
+ref/
+pack/
+
+# 临时与调试脚本产物
+*.tmp
+*-verify.yml
+test-*.yml
+test-*.json
+verify.log
+setup-test.log
+reinstall.log
+
+# 编辑器 / 系统
+.vs/
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini

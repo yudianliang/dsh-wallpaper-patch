@@ -1,0 +1,96 @@
+# dsh-dream-skin 组合包 patch
+#
+# 这一层只插入一行：皮肤宿主插件本体。
+# 它被注册在 webserver 的 index 注入钩子上，因此每个界面响应都会带上皮肤样式。
+#
+# 生效范围：仅 desktop profile（`web-skin` 之类其余 profile 不受影响）。
+# 想临时关掉皮肤：把 `disabled` 改成 true，或用插件管理器停用这一行。
+
+- insert:
+    - id: dsh-dream-skin
+      name: 'dsh-dream-skin'
+      # 只挂载桌面端 profile；Web profile 不加载皮肤。
+      disabled: !!js "ctx.get('profileContext')?.name !== 'desktop'"
+      config:
+        # 背景图：本地图片绝对路径。留空 => 使用内置渐变底。
+        # 支持 %LOCALAPPDATA% / %USERPROFILE% / %APPDATA% 与 ${VAR} 形式的环境变量。
+        # 例：
+        #   imagePath: '%USERPROFILE%\Pictures\wallpaper.jpg'
+        # 留空 = 内置渐变底。想用自己的图：点程序里的「更换壁纸…」。
+        imagePath: ''
+        # 背景图不透明度 0.05 ~ 1
+        imageOpacity: 0.95
+        # 背景图模糊像素 0 ~ 40
+        blur: 0
+        # 面板通透度 0.15 ~ 1：越小越透，越能看见背景图
+        panelAlpha: 0.52
+        # 侧栏单独的通透度 0.05 ~ 1（侧栏默认比主区更透）
+        sidebarAlpha: 0.40
+        # 背景图之上的遮罩强度 0 ~ 0.9，用来保证文字可读
+        scrim: 0.12
+        # 液态玻璃半径 0 ~ 40；0 关闭。
+        # 只作用在左侧栏按钮与对话框上：大容器不做模糊，所以壁纸始终清晰。
+        glassBlur: 20
+        # 侧栏一级按钮的玻璃底：透明度 30% => 不透明度 0.70
+        buttonAlpha: 0.70
+        # 列表里单个条目（工作区 / 会话行）的玻璃底：透明度 50% => 不透明度 0.50
+        rowAlpha: 0.50
+        # 对话框毛玻璃底：透明度 70% => 不透明度 0.30
+        dialogAlpha: 0.30
+        # 左下角个人中心按钮（侧栏左下角的头像 + 用户名）玻璃底不透明度
+        accountAlpha: 0.80
+        # 输入区（composer）玻璃底的不透明度 0.05 ~ 1
+        inputAlpha: 0.50
+        # 用户气泡玻璃底：透明度 10% => 不透明度 0.90
+        bubbleAlpha: 0.90
+        # 性能与用量条（composer 下方那一行）的不透明度：1 = 完全不透明
+        statsAlpha: 1
+        # 命令菜单 / 下拉菜单（输入 / 或 @ 弹出）的不透明度：1 = 完全不透明
+        menuAlpha: 1
+        # 滚动条（轨道 + 滑块）的不透明度：1 = 完全不透明
+        scrollAlpha: 1
+
+        # ── 各元素的底色 ───────────────────────────────────────────────
+        # 和上面 11 个不透明度一一对应。
+        # 留空 '' => 沿用主题原本的中性底色；填 '#rrggbb' => 换成这个颜色。
+        # 程序面板里每个不透明度滑块右边的色块，改的就是这里。
+        #
+        #   侧栏一级按钮 / 工作区按钮
+        buttonTint: ''
+        #   侧栏列表里的单个条目
+        rowTint: ''
+        #   左下角账户入口
+        accountTint: ''
+        #   用户气泡
+        bubbleTint: ''
+        #   输入区
+        inputTint: ''
+        #   性能与用量条
+        statsTint: ''
+        #   命令菜单 / 下拉菜单
+        menuTint: ''
+        #   滚动条滑块
+        scrollTint: ''
+        #   对话框
+        dialogTint: ''
+        #   主区面板
+        panelTint: ''
+        #   侧栏整体底色
+        sidebarFillTint: ''
+        # 是否在界面右下角注入「壁纸 开/关」小开关（可拖动，点击即时生效，不用重启）
+        pageToggle: true
+        # 左侧栏色调（仅在 sidebarAccent 开启时生效）
+        sidebarTint: '#a882ff'
+        # 侧栏是否套用紫粉强调（紫青渐变 / 霓虹描边 / 紫粉悬停色）
+        # false = 保持 DSH 原本的中性色，只留通透度让壁纸透出来
+        sidebarAccent: false
+        # 侧栏强调色（霓虹粉）
+        accentPink: '#ff45c8'
+        # 面板变透后加极轻的文字阴影
+        textShadow: true
+        # 设置模态面板（设置 / 插件页）恢复为完全不透明，即透明度 0%
+        opaqueSettings: true
+        # 主色覆盖，例如 '#3b82f6' 或 'oklch(0.62 0.19 265)'。留空 => 保持 DSH 原主色
+        accent: ''
+        # 背景图体积上限（字节），超过则回退到内置渐变，避免页面响应过大
+        maxImageBytes: 12582912

@@ -1,0 +1,34 @@
+{
+  "name": "dsh-dream-skin",
+  "version": "1.0.0",
+  "description": "DSH 桌面端换肤插件：自定义壁纸、毛玻璃界面、逐元素透明度调节。",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "theme",
+    "skin",
+    "wallpaper",
+    "desktop",
+    "cordis-plugin"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/page.js",
+    "cordis.patch.yml",
+    "README.zh.md",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

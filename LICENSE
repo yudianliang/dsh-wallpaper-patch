@@ -1,0 +1,37 @@
+MIT License
+
+Copyright (c) 2026 DSH 万用壁纸补丁 contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---------------------------------------------------------------------------
+
+关于美术资源 / About artwork
+---------------------------
+
+本仓库**不包含任何第三方美术资源**（背景图、角色插画、图标等）。
+皮肤默认使用一个由 CSS 生成的渐变底；用户可以在本机指定自己的图片。
+
+默认壁纸路径指向用户自己的目录，且该文件不随仓库或安装包分发。
+请自行确保你所使用的图片拥有相应授权。
+
+This repository contains NO third-party artwork (backgrounds, character
+illustrations, icons). The skin falls back to a CSS-generated gradient by
+default; users may point it at their own local image. Wallpaper files are not
+redistributed with this repository or the installer.
