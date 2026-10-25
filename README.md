@@ -1,5 +1,7 @@
 # DSH 万用壁纸补丁
 
+[**下载安装包**](../../releases/latest) · [使用说明](docs/使用说明.md) · [手动应用与排错](docs/手动应用与排错.md) · [皮肤包文档](skin/README.zh.md)
+
 给 **DeepSeek Harness 桌面端**换壁纸、换观感的一体化工具。
 
 纯插件实现 —— **不修改 DSH 本体**，不替换任何官方文件；皮肤挂在宿主侧的
@@ -27,11 +29,14 @@
 
 ### 方式一：用安装包（推荐给普通用户）
 
-1. 到 [Releases](../../releases) 下载 `DSH万用壁纸补丁-安装程序.exe`
+1. 到 [Releases](../../releases) 下载 `DSH-Wallpaper-Patch-Setup.exe`
 2. 双击它
 3. 重启 DSH
 
 它会自动：把程序装到 `%LOCALAPPDATA%\DSH万用壁纸补丁\` → 安装皮肤 → 在桌面创建快捷方式。
+
+> 附件名是英文，是因为 GitHub 的 Release 文件名只接受 ASCII。装好之后，
+> 桌面上的快捷方式和安装目录都叫「**DSH万用壁纸补丁**」。
 
 ### 方式二：手动安装皮肤（只想要皮肤，不需要那个 GUI）
 
